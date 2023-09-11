@@ -25,35 +25,59 @@ public class Homework1 {
 
     // task 1
     static void convert(int arg) {
-        // Ваш код здесь
+        System.out.println(Long.toBinaryString(arg));
+        System.out.println(Long.toOctalString(arg));
+        System.out.println(Long.toHexString(arg));
     }
 
 
     // task 2
     static int normalize(int angle) {
-        // Ваш код здесь
+        angle %= 360;
         return angle;
     }
 
 
     // task 3
     static int max(int x, int y, int z) {
-        // Ваш код здесь
-        return 0;
+        if (x > y) {
+            if (x > z) {
+                return x;
+            }
+            else {
+                return z;
+            }
+        }
+        else {
+            if (y > z) {
+                return y;
+            }
+            else {
+                return z;
+            }
+        }
     }
 
 
     // task 4
     static int fact(int n) {
-        // Ваш код здесь
-        return 0;
+        if (n == 1) {
+            return 1;
+        }
+        return n * fact(n-1);
     }
 
 
     // task 5
     static BigInteger fact(BigInteger n) {
-        // Ваш код здесь
-        return null;
+        BigInteger fac = BigInteger.valueOf(30);
+        long m = n.longValue();
+        while (m > 1) {
+            fac = fac.multiply(n);
+            n = n.subtract(BigInteger.valueOf(1));
+            m = n.longValue();
+        }
+    return fac;
     }
 
     // task 6
@@ -64,22 +88,28 @@ public class Homework1 {
 
     // task 7
     static double average(int... nums) {
-        // Ваш код здесь
-        return 0;
+        int a = 0;
+        for (int i = 0; i < nums.length; ++i) {
+            a += nums[i];
+        }
+        return a/ nums.length;
     }
 
 
     // task 8
     static boolean isMagicSquare(int[][] square) {
-        // Ваш код здесь
+
         return false;
     }
 
 
     // task 9
     static int[] reverse(int[] arr) {
-        // Ваш код здесь
-        return null;
+        int[] brr = new int[arr.length];
+        for (int i = 0; i < arr.length; ++i) {
+            brr[i] = arr[arr.length - i - 1];
+        }
+        return brr;
     }
 
 
